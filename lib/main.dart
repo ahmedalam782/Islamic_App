@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app_route/Screens/home_screen.dart';
+import 'package:islamic_app_route/Shared/Themes/app_themes.dart';
 
 void main() {
   runApp(const IslamicApp());
@@ -15,6 +16,9 @@ class IslamicApp extends StatelessWidget {
       routes: {
         HomeScreen.routeName: (_) => HomeScreen(),
       },
+      theme: AppThemes.lightTheme,
+      darkTheme: AppThemes.darkTheme,
+      themeMode: ThemeMode.light,
     );
   }
 }

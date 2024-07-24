@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islamic_app_route/Widgets/default_appbar.dart';
-import 'package:islamic_app_route/Widgets/default_background_image.dart';
+import 'package:islamic_app_route/Shared/Components/default_appbar.dart';
+import 'package:islamic_app_route/Shared/Components/default_background_image.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = "/";
@@ -11,7 +11,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultBackgroundImage(
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         appBar: DefaultAppbar(),
       ),
     );
