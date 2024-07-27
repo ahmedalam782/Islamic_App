@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:islamic_app_route/Models/alayat_model.dart';
 import 'package:islamic_app_route/Widgets/Tabs/Quran_Tab/Surah_details/surah_details.dart';
 
-import '../../../../Models/sura_details_args.dart';
 
 class AlayatWidgets extends StatelessWidget {
   final AlayatModel names;
@@ -16,7 +15,7 @@ class AlayatWidgets extends StatelessWidget {
       onTap: () {
         Navigator.of(context).pushNamed(
           SurahDetails.routeName,
-          arguments: SuraDetailsArgs(title: names.name, index: index),
+          arguments: AlayatModel(name: names.name, index: index),
         );
       },
       child: Row(

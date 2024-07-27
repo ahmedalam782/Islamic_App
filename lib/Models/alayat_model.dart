@@ -1,10 +1,12 @@
 class AlayatModel {
   final String name;
-  final int number;
+  final int? number;
+  final int? index;
 
   AlayatModel({
+    this.index,
     required this.name,
-    required this.number,
+    this.number,
   });
 
   static List<AlayatModel> alayat() {

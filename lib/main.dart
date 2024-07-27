@@ -3,6 +3,8 @@ import 'package:islamic_app_route/Screens/home_screen.dart';
 import 'package:islamic_app_route/Shared/Themes/app_themes.dart';
 import 'package:islamic_app_route/Widgets/Tabs/Quran_Tab/Surah_details/surah_details.dart';
 
+import 'Widgets/Tabs/Hadiths_Tab/Hadith_details/hadith_details.dart';
+
 void main() {
   runApp(const IslamicApp());
 }
@@ -16,7 +18,8 @@ class IslamicApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         HomeScreen.routeName: (_) => HomeScreen(),
-        SurahDetails.routeName: (_) => SurahDetails()
+        SurahDetails.routeName: (_) => SurahDetails(),
+        HadithDetails.routeName: (_) => HadithDetails(),
       },
       theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
