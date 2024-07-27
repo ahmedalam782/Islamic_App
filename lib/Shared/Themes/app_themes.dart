@@ -51,6 +51,12 @@ class AppThemes {
         color: blackColor,
       ),
     ),
+    cardTheme: CardTheme(
+      color: whiteColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25),
+      ),
+    ),
     dividerTheme: const DividerThemeData(
       color: lightPrimaryColor,
       thickness: 3,
@@ -73,6 +79,12 @@ class AppThemes {
         fontSize: 30,
         fontWeight: FontWeight.w700,
         color: whiteColor,
+      ),
+    ),
+    cardTheme: CardTheme(
+      color: whiteColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25),
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
