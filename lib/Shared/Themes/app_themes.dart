@@ -10,6 +10,7 @@ class AppThemes {
 
   static ThemeData lightTheme = ThemeData(
     primaryColor: blackColor,
+    secondaryHeaderColor: lightPrimaryColor,
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: lightPrimaryColor,
     ),
@@ -64,6 +65,7 @@ class AppThemes {
   );
   static ThemeData darkTheme = ThemeData(
     primaryColor: goldColor,
+    secondaryHeaderColor: goldColor,
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: goldColor,
     ),
