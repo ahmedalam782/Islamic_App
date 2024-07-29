@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:islamic_app_route/Models/alayat_model.dart';
 import 'package:islamic_app_route/Widgets/Tabs/Quran_Tab/Surah_details/surah_details.dart';
 
-
 class AlayatWidgets extends StatelessWidget {
   final AlayatModel names;
   final int index;

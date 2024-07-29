@@ -47,7 +47,7 @@ class QuranTab extends StatelessWidget {
           ),
         ),
         const Divider(
-          height: 0,
+          height: 5,
         ),
         const AlayatList(),
       ],
