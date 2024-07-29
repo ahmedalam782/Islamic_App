@@ -18,32 +18,34 @@ class AlayatWidgets extends StatelessWidget {
           arguments: AlayatModel(name: names.name, index: index),
         );
       },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Expanded(
-            child: Text(
-              names.name,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleLarge,
+      child: IntrinsicHeight(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Expanded(
+              child: Padding(
+                padding:
+                    EdgeInsets.all(MediaQuery.sizeOf(context).height * .009),
+                child: Text(
+                  names.name,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+              ),
             ),
-          ),
-          SizedBox(
-            height: MediaQuery.sizeOf(context).height * .06,
-            width: MediaQuery.sizeOf(context).width * .060,
-            child: const VerticalDivider(
+            const VerticalDivider(
               width: 0,
             ),
-          ),
-          Expanded(
-            child: Text(
-              '${names.number}',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleLarge,
+            Expanded(
+              child: Text(
+                '${names.number}',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
             ),
-          ),
-          // Spacer(),
-        ],
+            // Spacer(),
+          ],
+        ),
       ),
     );
   }
