@@ -25,7 +25,7 @@ class QuranTab extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding:
-                      EdgeInsets.all(MediaQuery.sizeOf(context).height * .009),
+                      EdgeInsets.all(MediaQuery.sizeOf(context).height * .01),
                   child: Text(
                     "Surah name",
                     textAlign: TextAlign.center,
@@ -47,7 +47,7 @@ class QuranTab extends StatelessWidget {
           ),
         ),
         const Divider(
-          height: 5,
+          height: 0,
         ),
         const AlayatList(),
       ],

@@ -71,10 +71,8 @@ class _SurahDetailsState extends State<SurahDetails> {
                     ? Expanded(
                         child: ListView.separated(
                           itemBuilder: (_, index) => Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal:
-                                  MediaQuery.sizeOf(context).width * .08,
-                            ),
+                            padding: EdgeInsets.all(
+                                MediaQuery.sizeOf(context).height * .01),
                             child: Text(
                               "(${index + 1})${chapterContent[index]} ",
                               textAlign: TextAlign.center,

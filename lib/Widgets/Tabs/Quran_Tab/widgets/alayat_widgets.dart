@@ -24,7 +24,7 @@ class AlayatWidgets extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding:
-                    EdgeInsets.all(MediaQuery.sizeOf(context).height * .009),
+                    EdgeInsets.all(MediaQuery.sizeOf(context).height * .014),
                 child: Text(
                   names.name,
                   textAlign: TextAlign.center,
