@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app_route/Shared/Themes/app_themes.dart';
+import 'package:provider/provider.dart';
+
+import '../Settings_Tab/settings_provider.dart';
 
 class AltasbihTab extends StatefulWidget {
   const AltasbihTab({super.key});
@@ -21,32 +25,42 @@ class _AltasbihTabState extends State<AltasbihTab> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Stack(
             alignment: Alignment.topCenter,
             children: [
-              Image.asset(
-                "assets/images/head of seb7a.png",
-                height: MediaQuery.sizeOf(context).height * .12,
+              Padding(
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * .09,
+                ),
+                child: Image.asset(
+                  settingsProvider.headSeb7a,
+                  height: MediaQuery.of(context).size.height * .12,
+                ),
               ),
-              GestureDetector(
-                onTap: () => changeCountSebihaAndRotate(),
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * .031,
-                  ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * .003,
+                ),
+                child: GestureDetector(
+                  onTap: () => changeCountSebihaAndRotate(),
                   child: Transform.rotate(
                     angle: angle,
                     child: Image.asset(
-                      "assets/images/body of seb7a.png",
-                      height: MediaQuery.sizeOf(context).height * .42,
+                      settingsProvider.bodySeb7a,
+                      height: MediaQuery.of(context).size.height * .50,
                     ),
                   ),
                 ),
               ),
             ],
+          ),
+          SizedBox(
+            height: MediaQuery.sizeOf(context).height * .020,
           ),
           Center(
             child: Text(
@@ -65,7 +79,9 @@ class _AltasbihTabState extends State<AltasbihTab> {
               borderRadius: BorderRadius.circular(
                 MediaQuery.sizeOf(context).height * .025,
               ),
-              color: Theme.of(context).secondaryHeaderColor.withOpacity(.57),
+              color: settingsProvider.isDark
+                  ? AppThemes.darkPrimaryColor
+                  : AppThemes.lightPrimaryColor.withOpacity(.57),
             ),
             child: Text(
               "$count",
@@ -87,7 +103,10 @@ class _AltasbihTabState extends State<AltasbihTab> {
             ),
             child: Text(
               namesOfSebiha[currentIndex],
-              style: Theme.of(context).textTheme.titleLarge,
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: settingsProvider.isDark
+                      ? AppThemes.blackColor
+                      : AppThemes.whiteColor),
             ),
           ),
         ],

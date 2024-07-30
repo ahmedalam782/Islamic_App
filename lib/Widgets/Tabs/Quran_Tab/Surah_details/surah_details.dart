@@ -74,7 +74,7 @@ class _SurahDetailsState extends State<SurahDetails> {
                             padding: EdgeInsets.all(
                                 MediaQuery.sizeOf(context).height * .01),
                             child: Text(
-                              "(${index + 1})${chapterContent[index]} ",
+                              "(${index + 1})\t${chapterContent[index]} ",
                               textAlign: TextAlign.center,
                               style: Theme.of(context)
                                   .textTheme
