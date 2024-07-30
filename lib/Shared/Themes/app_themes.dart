@@ -84,7 +84,7 @@ class AppThemes {
       ),
     ),
     cardTheme: CardTheme(
-      color: whiteColor,
+      color: darkPrimaryColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(25),
       ),
