@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class SettingsProvider with ChangeNotifier {
   ThemeMode themeMode = ThemeMode.light;
   String lang = 'en';
+  late BuildContext context;
 
   bool get isDark => themeMode == ThemeMode.dark;
 
@@ -14,6 +15,14 @@ class SettingsProvider with ChangeNotifier {
 
   String get headSeb7a =>
       "assets/images/${isDark ? 'head of seb7a_dark' : 'head of seb7a'}.png";
+
+  double get topPaddingBodyOfSeb7a => isDark
+      ? MediaQuery.sizeOf(context).height * 0.095
+      : MediaQuery.sizeOf(context).height * 0.044;
+
+  double get bottomPaddingBodyOfSeb7a => isDark
+      ? MediaQuery.sizeOf(context).height * 0.04
+      : MediaQuery.sizeOf(context).height * 0.01;
 
   void changeThemeMode(ThemeMode selectedThemeMode) {
     themeMode = selectedThemeMode;
