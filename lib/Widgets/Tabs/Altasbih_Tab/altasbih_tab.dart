@@ -61,8 +61,9 @@ class _AltasbihTabState extends State<AltasbihTab> {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(
-              MediaQuery.sizeOf(context).height * .016,
+            padding: EdgeInsets.symmetric(
+              vertical: MediaQuery.sizeOf(context).height * .022,
+              horizontal: MediaQuery.sizeOf(context).width * .030,
             ),
             margin: EdgeInsets.all(
               MediaQuery.sizeOf(context).height * .016,
@@ -81,8 +82,9 @@ class _AltasbihTabState extends State<AltasbihTab> {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(
-              MediaQuery.sizeOf(context).height * .016,
+            padding: EdgeInsets.symmetric(
+              vertical: MediaQuery.sizeOf(context).height * .014,
+              horizontal: MediaQuery.sizeOf(context).width * .021,
             ),
             margin: EdgeInsets.all(
               MediaQuery.sizeOf(context).height * .016,
@@ -96,9 +98,10 @@ class _AltasbihTabState extends State<AltasbihTab> {
             child: Text(
               namesOfSebiha[currentIndex],
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: settingsProvider.isDark
-                      ? AppThemes.blackColor
-                      : AppThemes.whiteColor),
+                    color: settingsProvider.isDark
+                        ? AppThemes.blackColor
+                        : AppThemes.whiteColor,
+                  ),
             ),
           ),
         ],

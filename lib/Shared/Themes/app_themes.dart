@@ -14,6 +14,17 @@ class AppThemes {
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: lightPrimaryColor,
     ),
+    switchTheme: SwitchThemeData(
+      thumbColor: WidgetStateProperty.all(
+        lightPrimaryColor,
+      ),
+      trackOutlineColor: WidgetStateProperty.all(
+        lightPrimaryColor,
+      ),
+      trackColor: WidgetStateProperty.all(
+        whiteColor,
+      ),
+    ),
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
       centerTitle: true,
@@ -68,6 +79,17 @@ class AppThemes {
     secondaryHeaderColor: goldColor,
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: goldColor,
+    ),
+    switchTheme: SwitchThemeData(
+      thumbColor: WidgetStateProperty.all(
+        goldColor,
+      ),
+      trackOutlineColor: WidgetStateProperty.all(
+        goldColor,
+      ),
+      trackColor: WidgetStateProperty.all(
+        darkPrimaryColor,
+      ),
     ),
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(

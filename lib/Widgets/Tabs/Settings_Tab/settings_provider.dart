@@ -24,6 +24,8 @@ class SettingsProvider with ChangeNotifier {
       ? MediaQuery.sizeOf(context).height * 0.04
       : MediaQuery.sizeOf(context).height * 0.01;
 
+  IconData get settingModeIcon => isDark ? Icons.dark_mode : Icons.light_mode;
+
   void changeThemeMode(ThemeMode selectedThemeMode) {
     themeMode = selectedThemeMode;
     notifyListeners();
