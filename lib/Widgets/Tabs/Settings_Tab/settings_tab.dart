@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamic_app_route/Shared/Themes/app_themes.dart';
 import 'package:islamic_app_route/Widgets/Tabs/Settings_Tab/settings_provider.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +27,7 @@ class SettingsTab extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width * .05,
               ),
               Text(
-                "Dark Mode",
+                AppLocalizations.of(context)!.darkMode,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               const Spacer(),
@@ -51,7 +52,7 @@ class SettingsTab extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width * .05,
               ),
               Text(
-                "Language",
+                AppLocalizations.of(context)!.language,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               const Spacer(),
@@ -82,14 +83,14 @@ class SettingsTab extends StatelessWidget {
                       DropdownMenuItem(
                         value: 'en',
                         child: Text(
-                          'English',
+                          AppLocalizations.of(context)!.english,
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ),
                       DropdownMenuItem(
                         value: 'ar',
                         child: Text(
-                          'Arabic',
+                          AppLocalizations.of(context)!.arabic,
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       )

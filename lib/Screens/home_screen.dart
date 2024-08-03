@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamic_app_route/Shared/Components/default_appbar.dart';
 import 'package:islamic_app_route/Shared/Components/default_background_image.dart';
 import 'package:islamic_app_route/Widgets/Tabs/Altasbih_Tab/altasbih_tab.dart';
@@ -37,34 +38,34 @@ class _HomeScreenState extends State<HomeScreen> {
             currentIndex = value;
             setState(() {});
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              label: 'Quran',
-              icon: ImageIcon(
+              label: AppLocalizations.of(context)!.quran,
+              icon: const ImageIcon(
                 AssetImage("assets/images/icon_quran.png"),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'Hadiths',
-              icon: ImageIcon(
+              label: AppLocalizations.of(context)!.hadiths,
+              icon: const ImageIcon(
                 AssetImage("assets/images/icon_hadith.png"),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'Altasbih',
-              icon: ImageIcon(
+              label: AppLocalizations.of(context)!.altasbih,
+              icon: const ImageIcon(
                 AssetImage("assets/images/icon_sebha.png"),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'Radio',
-              icon: ImageIcon(
+              label: AppLocalizations.of(context)!.radio,
+              icon: const ImageIcon(
                 AssetImage("assets/images/icon_radio.png"),
               ),
             ),
             BottomNavigationBarItem(
-              label: 'Settings',
-              icon: Icon(
+              label: AppLocalizations.of(context)!.settings,
+              icon: const Icon(
                 Icons.settings_rounded,
               ),
             ),

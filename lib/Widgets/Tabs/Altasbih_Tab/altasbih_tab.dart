@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamic_app_route/Shared/Themes/app_themes.dart';
 import 'package:provider/provider.dart';
 
@@ -56,7 +57,7 @@ class _AltasbihTabState extends State<AltasbihTab> {
           ),
           Center(
             child: Text(
-              "Numbers Of Tasbeehs ",
+              AppLocalizations.of(context)!.numberOfTasbeehs,
               style: Theme.of(context).textTheme.headlineSmall,
             ),
           ),

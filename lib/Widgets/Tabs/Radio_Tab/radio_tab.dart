@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioTab extends StatelessWidget {
   const RadioTab({super.key});
@@ -13,7 +14,7 @@ class RadioTab extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height * .01,
         ),
         Text(
-          "Holy Quran Radio",
+          AppLocalizations.of(context)!.holyQuranRadio,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         SizedBox(

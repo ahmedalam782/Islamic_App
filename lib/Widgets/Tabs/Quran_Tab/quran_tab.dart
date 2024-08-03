@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamic_app_route/Widgets/Tabs/Quran_Tab/widgets/alayat_list.dart';
 
 class QuranTab extends StatelessWidget {
@@ -27,7 +28,7 @@ class QuranTab extends StatelessWidget {
                   padding:
                       EdgeInsets.all(MediaQuery.sizeOf(context).height * .01),
                   child: Text(
-                    "Surah name",
+                    AppLocalizations.of(context)!.surahName,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
@@ -38,7 +39,7 @@ class QuranTab extends StatelessWidget {
               ),
               Expanded(
                 child: Text(
-                  'Verses Number',
+                  AppLocalizations.of(context)!.numberOfVerses,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamic_app_route/Screens/home_screen.dart';
 import 'package:islamic_app_route/Screens/splash_screen.dart';
 import 'package:islamic_app_route/Shared/Themes/app_themes.dart';
@@ -39,6 +40,9 @@ class IslamicApp extends StatelessWidget {
       theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
       themeMode: settingsProvider.themeMode,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: Locale(settingsProvider.lang),
     );
   }
 }
