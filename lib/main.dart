@@ -8,6 +8,7 @@ import 'package:islamic_app_route/Widgets/Tabs/Quran_Tab/Surah_details/surah_det
 import 'package:islamic_app_route/Widgets/Tabs/Settings_Tab/settings_provider.dart';
 import 'package:provider/provider.dart';
 
+import 'Shared/network/local/cache_helper.dart';
 import 'Widgets/Tabs/Hadiths_Tab/Hadith_details/hadith_details.dart';
 
 Future<void> main() async {
@@ -15,6 +16,7 @@ Future<void> main() async {
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
+  await CacheHelper.init();
   runApp(
     ChangeNotifierProvider(
       create: (_) => SettingsProvider(),

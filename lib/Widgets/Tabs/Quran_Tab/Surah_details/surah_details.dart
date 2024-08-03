@@ -30,8 +30,8 @@ class _SurahDetailsState extends State<SurahDetails> {
           padding: EdgeInsets.only(
             left: MediaQuery.sizeOf(context).width * .05,
             right: MediaQuery.sizeOf(context).width * .05,
-            bottom: MediaQuery.sizeOf(context).width * .20,
-            top: MediaQuery.sizeOf(context).width * .05,
+            bottom: MediaQuery.sizeOf(context).height * .03,
+            top: MediaQuery.sizeOf(context).height * .01,
           ),
           child: Card(
             child: Column(
@@ -59,31 +59,55 @@ class _SurahDetailsState extends State<SurahDetails> {
                   ),
                 ),
                 Divider(
-                  height: 5,
+                  height: 4,
                   indent: MediaQuery.sizeOf(context).width * .12,
                   endIndent: MediaQuery.sizeOf(context).width * .12,
                   thickness: 1.3,
                 ),
                 SizedBox(
-                  height: MediaQuery.sizeOf(context).height * .03,
+                  height: MediaQuery.sizeOf(context).height * .01,
                 ),
                 chapterContent.isNotEmpty
                     ? Expanded(
                         child: ListView.separated(
-                          itemBuilder: (_, index) => Padding(
-                            padding: EdgeInsets.all(
-                                MediaQuery.sizeOf(context).height * .01),
-                            child: Text(
-                              "(${index + 1})\t${chapterContent[index]} ",
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleLarge
-                                  ?.copyWith(
-                                    color: Theme.of(context).primaryColor,
-                                    fontSize: 20,
-                                  ),
-                            ),
+                          itemBuilder: (_, index) => Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(
+                                  "${chapterContent[index]} ",
+                                  textAlign: TextAlign.center,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge
+                                      ?.copyWith(
+                                        color: Theme.of(context).primaryColor,
+                                        fontSize: 20,
+                                      ),
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Theme.of(context)
+                                          .secondaryHeaderColor,
+                                    ),
+                                    shape: BoxShape.circle),
+                                child: Text(
+                                  "${index + 1}",
+                                  textAlign: TextAlign.center,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge
+                                      ?.copyWith(
+                                        fontSize: 20,
+                                      ),
+                                ),
+                              )
+                            ],
                           ),
                           separatorBuilder: (_, index) => SizedBox(
                             height: MediaQuery.sizeOf(context).height * .04,
