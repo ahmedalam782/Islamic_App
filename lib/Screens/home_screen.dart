@@ -42,30 +42,35 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.quran,
               icon: const ImageIcon(
+                size: 30,
                 AssetImage("assets/images/icon_quran.png"),
               ),
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.hadiths,
               icon: const ImageIcon(
+                size: 30,
                 AssetImage("assets/images/icon_hadith.png"),
               ),
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.altasbih,
               icon: const ImageIcon(
+                size: 30,
                 AssetImage("assets/images/icon_sebha.png"),
               ),
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.radio,
               icon: const ImageIcon(
+                size: 30,
                 AssetImage("assets/images/icon_radio.png"),
               ),
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.settings,
               icon: const Icon(
+                size: 30,
                 Icons.settings_rounded,
               ),
             ),
