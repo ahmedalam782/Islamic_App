@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:islamic_app_route/Models/alayat_model.dart';
 import 'package:islamic_app_route/Shared/Components/default_appbar.dart';
 import 'package:islamic_app_route/Shared/Components/default_background_image.dart';
+import 'package:islamic_app_route/Widgets/Tabs/Quran_Tab/Surah_details/widget/surah_content_design.dart';
 
 class SurahDetails extends StatefulWidget {
   static const String routeName = "SurahDetails";
@@ -70,44 +71,9 @@ class _SurahDetailsState extends State<SurahDetails> {
                 chapterContent.isNotEmpty
                     ? Expanded(
                         child: ListView.separated(
-                          itemBuilder: (_, index) => Column(
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8.0),
-                                child: Text(
-                                  "${chapterContent[index]} ",
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge
-                                      ?.copyWith(
-                                        color: Theme.of(context).primaryColor,
-                                        fontSize: 20,
-                                      ),
-                                ),
-                              ),
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                margin: const EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Theme.of(context)
-                                          .secondaryHeaderColor,
-                                    ),
-                                    shape: BoxShape.circle),
-                                child: Text(
-                                  "${index + 1}",
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge
-                                      ?.copyWith(
-                                        fontSize: 20,
-                                      ),
-                                ),
-                              )
-                            ],
+                          itemBuilder: (_, index) => SurahContentDesign(
+                            chapterContent: chapterContent[index],
+                            index: index,
                           ),
                           separatorBuilder: (_, index) => SizedBox(
                             height: MediaQuery.sizeOf(context).height * .04,
