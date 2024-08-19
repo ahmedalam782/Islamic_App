@@ -27,7 +27,13 @@ class _AltasbihTabState extends State<AltasbihTab> {
   @override
   Widget build(BuildContext context) {
     SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
-    settingsProvider.context = context;
+    double topPaddingBodyOfSeb7a = settingsProvider.isDark
+        ? MediaQuery.sizeOf(context).height * 0.095
+        : MediaQuery.sizeOf(context).height * 0.044;
+
+    double bottomPaddingBodyOfSeb7a = settingsProvider.isDark
+        ? MediaQuery.sizeOf(context).height * 0.04
+        : MediaQuery.sizeOf(context).height * 0.01;
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -40,8 +46,8 @@ class _AltasbihTabState extends State<AltasbihTab> {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  top: settingsProvider.topPaddingBodyOfSeb7a,
-                  bottom: settingsProvider.bottomPaddingBodyOfSeb7a,
+                  top: topPaddingBodyOfSeb7a,
+                  bottom: bottomPaddingBodyOfSeb7a,
                 ),
                 child: GestureDetector(
                   onTap: () => changeCountSebihaAndRotate(),

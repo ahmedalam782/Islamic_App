@@ -19,7 +19,9 @@ Future<void> main() async {
   await CacheHelper.init();
   runApp(
     ChangeNotifierProvider(
-      create: (_) => SettingsProvider(),
+      create: (_) => SettingsProvider()
+        ..getThemeMode()
+        ..getLang(),
       child: const IslamicApp(),
     ),
   );

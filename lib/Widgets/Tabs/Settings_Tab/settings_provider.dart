@@ -3,13 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../Shared/network/local/cache_helper.dart';
 
 class SettingsProvider with ChangeNotifier {
-  ThemeMode themeMode = CacheHelper.getData(key: 'isDark') == null
-      ? ThemeMode.light
-      : CacheHelper.getData(key: 'isDark')
-          ? ThemeMode.dark
-          : ThemeMode.light;
-  String lang = CacheHelper.getData(key: 'isLanguage') ?? "en";
-  late BuildContext context;
+  ThemeMode themeMode = ThemeMode.light;
+
+  String lang = "en";
 
   bool get isDark => themeMode == ThemeMode.dark;
 
@@ -25,25 +21,29 @@ class SettingsProvider with ChangeNotifier {
   String get headSeb7a =>
       "assets/images/${isDark ? 'head of seb7a_dark' : 'head of seb7a'}.png";
 
-  double get topPaddingBodyOfSeb7a => isDark
-      ? MediaQuery.sizeOf(context).height * 0.095
-      : MediaQuery.sizeOf(context).height * 0.044;
-
-  double get bottomPaddingBodyOfSeb7a => isDark
-      ? MediaQuery.sizeOf(context).height * 0.04
-      : MediaQuery.sizeOf(context).height * 0.01;
-
   IconData get settingModeIcon => isDark ? Icons.dark_mode : Icons.light_mode;
 
-  void changeThemeMode(ThemeMode selectedThemeMode) {
+  Future<void> changeThemeMode(ThemeMode selectedThemeMode) async {
     themeMode = selectedThemeMode;
-    CacheHelper.saveData(key: 'isDark', value: isDark);
+    await CacheHelper.saveData(key: 'isDark', value: isDark);
     notifyListeners();
   }
 
-  void changeLanguage(String selectedLanguage) {
+  Future<void> changeLanguage(String selectedLanguage) async {
     lang = selectedLanguage;
-    CacheHelper.saveData(key: 'isLanguage', value: lang);
+    await CacheHelper.saveData(key: 'isLanguage', value: lang);
     notifyListeners();
+  }
+
+  Future<void> getThemeMode() async {
+    themeMode = await CacheHelper.getData(key: 'isDark') == null
+        ? ThemeMode.light
+        : CacheHelper.getData(key: 'isDark')
+            ? ThemeMode.dark
+            : ThemeMode.light;
+  }
+
+  Future<void> getLang() async {
+    lang = await CacheHelper.getData(key: 'isLanguage') ?? "en";
   }
 }
