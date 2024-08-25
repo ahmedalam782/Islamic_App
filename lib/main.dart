@@ -17,11 +17,18 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
   ]);
   await CacheHelper.init();
+  ThemeMode theme = await CacheHelper.getData(key: 'isDark') == null
+      ? ThemeMode.light
+      : CacheHelper.getData(key: 'isDark')
+          ? ThemeMode.dark
+          : ThemeMode.light;
+  String lang = await CacheHelper.getData(key: 'isLanguage') ?? "en";
+
   runApp(
     ChangeNotifierProvider(
       create: (_) => SettingsProvider()
-        ..getThemeMode()
-        ..getLang(),
+        ..changeThemeMode(theme)
+        ..changeLanguage(lang),
       child: const IslamicApp(),
     ),
   );
