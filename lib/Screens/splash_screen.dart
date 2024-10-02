@@ -19,7 +19,10 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(
       const Duration(seconds: 3),
-      () => Navigator.pushReplacementNamed(context, HomeScreen.routeName),
+      () {
+        if (!mounted) return;
+        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+      },
     );
   }
 
@@ -30,7 +33,15 @@ class _SplashScreenState extends State<SplashScreen> {
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fill,
-          image: AssetImage(settingsProvider.splashImage),
+          image: AssetImage(settingsProvider.splashBackground),
+        ),
+      ),
+      child: Scaffold(
+        body: Center(
+          child: Image.asset(
+            settingsProvider.splashImage,
+            width: double.infinity,
+          ),
         ),
       ),
     );

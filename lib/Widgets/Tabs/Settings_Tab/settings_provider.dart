@@ -10,10 +10,13 @@ class SettingsProvider with ChangeNotifier {
   bool get isDark => themeMode == ThemeMode.dark;
 
   String get splashImage =>
-      "assets/images/${isDark ? 'bg_splash_dark' : 'bg_splash'}.png";
+      "assets/images/${isDark ? 'img_splash_dark' : 'img_splash'}.png";
 
   String get defaultBackground =>
       "assets/images/${isDark ? 'dark_bg' : 'default_bg'}.png";
+
+  String get splashBackground =>
+      "assets/images/${isDark ? 'bg_splash_dark' : 'bg_splash'}.png";
 
   String get bodySeb7a =>
       "assets/images/${isDark ? 'body of seb7a_dark' : 'body of seb7a'}.png";
