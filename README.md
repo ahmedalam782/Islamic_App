@@ -4,6 +4,9 @@
 
 This Islamic App is built using Flutter and aims to provide users with a comprehensive set of features, including access to Islamic radio, Quran readings, Hadith collections, Tasbih counter, and customizable settings for language and themes.
 
+
+<img width="60%" src="https://github.com/user-attachments/assets/1fcf13b9-6713-4e27-b3d7-4b869f66ca6e" />
+
 <img width="40%" src="https://github.com/user-attachments/assets/5edbcd0a-2b99-49a2-b4d4-b2b4c6fb18aa" />
 <img width="40%" src="https://github.com/user-attachments/assets/ea877022-8bd1-4251-9c04-c41fbb92def5" />
 <img width="40%" src="https://github.com/user-attachments/assets/c8c1b09a-ac70-4a99-b542-d7561b4fe7be" />
